@@ -4,6 +4,55 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color: blueviolet;
+:root{
+    --bgColor: #08362b;
 }
+
+/*  navbar start    */
+
+nav{
+    background: var(--bgColor);
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    position: fixed;
+}
+
+.nav-container{
+    background: var(--bgColor); 
+    height: 90px;
+    max-width: 1280px;
+    font-size: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container > .menu{
+    list-style-type: none;
+    /* cursor: pointer; */
+    display: flex; 
+}
+
+.nav-container > .menu > li > a:hover{
+    cursor: pointer;
+}
+
+.menu-main{
+    padding: 15px;
+}
+
+.menu-main, .logo {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-container > .sun-svg, .moon-svg{
+    width: 50px;
+}
+.nav-container > .sun-svg:hover, .moon-svg:hover{
+    color: yellow;/**/
+}
+
+/*  navbar end   */
