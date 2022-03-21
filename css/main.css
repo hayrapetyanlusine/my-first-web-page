@@ -6,6 +6,8 @@
 
 :root{
     --bgColor: #08362b;
+    --white: #FFFFFF;
+    --black: #333;
 }
 
 /*  navbar start    */
@@ -24,35 +26,120 @@ nav{
     max-width: 1280px;
     font-size: 20px;
     margin: 0 auto;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/*  nav menu start  */
 .nav-container > .menu{
     list-style-type: none;
-    /* cursor: pointer; */
     display: flex; 
 }
-
 .nav-container > .menu > li > a:hover{
     cursor: pointer;
+    background-color: #181a19ee;
+    border-radius: 5px;
 }
-
 .menu-main{
     padding: 15px;
 }
-
 .menu-main, .logo {
     text-decoration: none;
-    color: white;
+    color: var(--white);
+}
+/*  nav menu end  */
+
+.mode-svg{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.nav-container > .mode > .mode-svg:hover g{
+    fill: #dbb715;
+}
+.light{
+    background: var(--black);
+    color: var(--white);
 }
 
-.nav-container > .sun-svg, .moon-svg{
+/*  burger menu start  */
+.burger-menu{
+    display: none;
     width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
 }
-.nav-container > .sun-svg:hover, .moon-svg:hover{
-    color: yellow;/**/
+.burger-menu > span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 2px;
+    margin-top: -1px;
+    margin-left: -20px;
+    background-color: var(--white);
+}
+.burger-menu > span::after, .burger-menu > span::before{
+    background: var(--white);
+    content: "";
+    display: block;
+    position: absolute;
+    margin-top: -1px;
+    transition: .5s;
+    width: 50px;
+    height: 2px;
+    transform: translateY(-10px);
+    top: 50%;
+}
+.burger-menu > span::after{
+    transform: translateY(10px);
+}
+/*  burger menu end  */
+
+@media screen and (max-width:768px){
+    .nav-container > .menu{
+        order: 1;
+    }
+    .nav-container > .logo-name{
+        order: 2;
+    }
+    .nav-container > .mode{
+        order: 3;
+    }
+
+    .burger-menu{
+        display: block;
+    }
+    .menu{
+        flex-flow: column;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 90px;
+        background: var(--bgColor);
+    }
+    .menu > li {
+        position: relative;
+        text-align: center;
+        margin: 10px;
+    }
 }
 
 /*  navbar end   */
+
+/*header*/
+
+/* #div{
+    max-width: 1349px;
+    height: 400px;
+    background-color: #215a4d;
+} */
+
+.bg-img{
+    width: 100%;
+    height: 700px;
+    opacity: 0.9; 
+}
