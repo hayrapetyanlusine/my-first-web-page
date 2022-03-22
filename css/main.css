@@ -8,6 +8,7 @@
     --bgColor: #08362b;
     --white: #FFFFFF;
     --black: #333;
+    --headerBg:  #aae06956;
 }
 
 /*  navbar start    */
@@ -20,7 +21,7 @@ nav{
     position: fixed;
 }
 
-.nav-container{
+nav .nav-container{
     background: var(--bgColor); 
     height: 90px;
     max-width: 1280px;
@@ -33,30 +34,30 @@ nav{
 }
 
 /*  nav menu start  */
-.nav-container > .menu{
+nav .nav-container > .menu{
     list-style-type: none;
     display: flex; 
 }
-.nav-container > .menu > li > a:hover{
+nav .nav-container > .menu > li > a:hover{
     cursor: pointer;
     background-color: #181a19ee;
     border-radius: 5px;
 }
-.menu-main{
+nav .nav-container .menu .menu-main{
     padding: 15px;
 }
-.menu-main, .logo {
+nav .nav-container .menu .menu-main, .logo {
     text-decoration: none;
     color: var(--white);
 }
 /*  nav menu end  */
 
-.mode-svg{
+nav .nav-container .mode .mode-svg{
     width: 50px;
     height: 50px;
     cursor: pointer;
 }
-.nav-container > .mode > .mode-svg:hover g{
+nav .nav-container > .mode > .mode-svg:hover g{
     fill: #dbb715;
 }
 .light{
@@ -65,14 +66,14 @@ nav{
 }
 
 /*  burger menu start  */
-.burger-menu{
+nav .nav-container .burger-menu{
     display: none;
     width: 50px;
     height: 50px;
     position: relative;
     cursor: pointer;
 }
-.burger-menu > span{
+nav .nav-container .burger-menu > span{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -82,7 +83,7 @@ nav{
     margin-left: -20px;
     background-color: var(--white);
 }
-.burger-menu > span::after, .burger-menu > span::before{
+nav .nav-container .burger-menu > span::after, nav .nav-container .burger-menu > span::before{
     background: var(--white);
     content: "";
     display: block;
@@ -94,26 +95,26 @@ nav{
     transform: translateY(-10px);
     top: 50%;
 }
-.burger-menu > span::after{
+nav .nav-container .burger-menu > span::after{
     transform: translateY(10px);
 }
 /*  burger menu end  */
 
 @media screen and (max-width:768px){
-    .nav-container > .menu{
+    nav .nav-container > .menu{
         order: 1;
     }
-    .nav-container > .logo-name{
+    nav .nav-container > .logo-name{
         order: 2;
     }
-    .nav-container > .mode{
+    nav .nav-container > .mode{
         order: 3;
     }
 
-    .burger-menu{
+    nav .nav-container .burger-menu{
         display: block;
     }
-    .menu{
+    nav .nav-container .menu{
         flex-flow: column;
         position: absolute;
         left: 0;
@@ -121,7 +122,7 @@ nav{
         top: 90px;
         background: var(--bgColor);
     }
-    .menu > li {
+    nav .nav-container .menu > li {
         position: relative;
         text-align: center;
         margin: 10px;
@@ -130,16 +131,82 @@ nav{
 
 /*  navbar end   */
 
-/*header*/
-
-/* #div{
-    max-width: 1349px;
-    height: 400px;
-    background-color: #215a4d;
-} */
-
-.bg-img{
+header{
     width: 100%;
-    height: 700px;
-    opacity: 0.9; 
+    
+}
+header > .header-container{
+    height: 600px;
+    color: var(--white);
+    background: url("../images/3.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+header .header-container .header-main{
+    width: 700px;
+    height: 400px;
+    background: var(--headerBg);
+    text-align: center;
+}
+header .header-container .header-main p {
+    padding-top: 90px;
+    font-size: 22px;
+}
+header .header-container .header-main h1{
+    padding-bottom: 30px;
+    font-size: 70px;
+}
+header .header-container .header-main .header-btn{
+    border-radius: 3px;
+    background: #81c132;
+    border: 2px solid #81c132;
+    width: 170px;
+    height: 40px;
+    cursor: pointer;
+    color: var(--white);
+    padding:  10px 30px;
+    font-size:  16px;
+    margin-top: 30px;
+}
+
+
+main{
+    width: 100%;
+    background: #f0f2f5;
+}
+main .main-container{
+    display: flex;
+}
+main .main-container .about .img{
+    width: 500px;
+    height: 400px;
+    box-shadow: 0 0 40px 0 rgb(26 26 26);
+
+}
+main .main-container .about {
+    margin: 20px 60px;
+}
+
+main .main-container .btn-up {
+    position: fixed;
+    color: var(--white);
+    right: 10px;
+    bottom: 100px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    background: var(--bgColor);
+    display: block;
+    font-size: 30px;
+    z-index: 3;
+    border: 1px solid transparent;
+    transition: all .2s;
 }
