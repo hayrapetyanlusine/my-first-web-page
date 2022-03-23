@@ -9,6 +9,7 @@
     --white: #FFFFFF;
     --black: #333;
     --headerBg:  #aae06956;
+    --hoverColor: #c3d492;
 }
 
 /*  navbar start    */
@@ -34,21 +35,24 @@ nav .nav-container{
 }
 
 /*  nav menu start  */
-nav .nav-container > .menu{
+nav .nav-container > #menu{
     list-style-type: none;
     display: flex; 
 }
-nav .nav-container > .menu > li > a:hover{
+nav .nav-container > #menu > li > a:hover{
     cursor: pointer;
-    background-color: #181a19ee;
+    color: var(--hoverColor);
     border-radius: 5px;
 }
-nav .nav-container .menu .menu-main{
+nav .nav-container #menu .menu-main{
     padding: 15px;
 }
-nav .nav-container .menu .menu-main, .logo {
+nav .nav-container #menu .menu-main, .logo {
     text-decoration: none;
     color: var(--white);
+}
+nav .nav-container .logo-name .logo:hover{
+    color: var(--hoverColor);
 }
 /*  nav menu end  */
 
@@ -101,7 +105,7 @@ nav .nav-container .burger-menu > span::after{
 /*  burger menu end  */
 
 @media screen and (max-width:768px){
-    nav .nav-container > .menu{
+    nav .nav-container > #menu{
         order: 1;
     }
     nav .nav-container > .logo-name{
@@ -114,15 +118,22 @@ nav .nav-container .burger-menu > span::after{
     nav .nav-container .burger-menu{
         display: block;
     }
-    nav .nav-container .menu{
+    nav .nav-container #menu{
         flex-flow: column;
         position: absolute;
         left: 0;
         width: 100%;
         top: 90px;
         background: var(--bgColor);
+        display: block;
+        transition: 0.5s;
+        transform: translate(-5000px);
     }
-    nav .nav-container .menu > li {
+    nav .nav-container #menu.active-nav{
+        transition: 0.5s;
+        transform: translate(0px);
+    }
+    nav .nav-container #menu.active-nav > li {
         position: relative;
         text-align: center;
         margin: 10px;
@@ -133,7 +144,6 @@ nav .nav-container .burger-menu > span::after{
 
 header{
     width: 100%;
-    
 }
 header > .header-container{
     height: 600px;
@@ -147,6 +157,7 @@ header > .header-container{
     display: flex;
     align-items: center;
     justify-content: center; 
+    padding: 15px;
 }
 header .header-container .header-main{
     width: 700px;
@@ -179,19 +190,30 @@ header .header-container .header-main .header-btn{
 main{
     width: 100%;
     background: #f0f2f5;
+    color: var(--black);
 }
 main .main-container{
-    display: flex;
+    /* display: flex; */
+    padding: 20px;
 }
 main .main-container .about .img{
-    width: 500px;
+    max-width: 500px;
     height: 400px;
     box-shadow: 0 0 40px 0 rgb(26 26 26);
-
+    background: url("../images/pic1.jpeg");
+    float: left;
+    background-size: cover;
 }
 main .main-container .about {
-    margin: 20px 60px;
+    margin: 30px 60px;
+    height: 400px;
+    overflow: hidden;
+    max-width: 1300px;
 }
+/* main .main-container .about h1, p{
+    right: 5px;
+    font-size: 40px;
+} */
 
 main .main-container .btn-up {
     position: fixed;
@@ -204,9 +226,42 @@ main .main-container .btn-up {
     line-height: 50px;
     cursor: pointer;
     background: var(--bgColor);
-    display: block;
+    display: none;
     font-size: 30px;
     z-index: 3;
     border: 1px solid transparent;
     transition: all .2s;
+}
+main .main-container .btn-up.showBtn{
+    display: block;
+}
+
+
+footer{
+    width: 100%;
+    color: var(--white);
+}
+footer .footer-container{
+    min-height: 300px;
+    text-align: center;
+    background: var(--bgColor);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+footer .footer-container .footer-item h1{
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+footer .footer-container .footer-item p{
+    font-size: 19px;
+}
+footer .create-container{
+    background-color: var(--bgColor);
+    font-size: 19px;
+    text-align: center;
+}
+.social svg{
+    fill: var(--white);
 }
