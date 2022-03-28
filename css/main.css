@@ -54,16 +54,7 @@ nav .nav-container .logo-name .logo:hover{
 }
 /*  nav menu end  */
 
-nav .nav-container .mode .mode-svg{
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-}
-nav .nav-container > .mode > .mode-svg:hover g{
-    fill: #dbb715;
-}
-.light{
-    background: var(--black);
+.date-content{
     color: var(--white);
 }
 
@@ -108,8 +99,9 @@ nav .nav-container .burger-menu > span::after{
     nav .nav-container .logo-name{
         order: 2;
     }
-    nav .nav-container .mode{
+    nav .nav-container .date-content{
         order: 3;
+        font-size: 17px;
     }
 
     nav .nav-container .burger-menu{

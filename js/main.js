@@ -1,9 +1,72 @@
 window.addEventListener("DOMContentLoaded", () => {
-    // const mode = document.querySelector(".mode-svg");
 
-    // mode.addEventListener("click", function() {
-    //     document.body.classList.toggle("light");
-    // });
+    //date
+    setTimeout(function go() {
+        const date = new Date();
+      
+        const day = document.querySelector("#day");
+        const month = document.querySelector("#month");
+        const year = document.querySelector("#year");
+      
+        switch (day.innerText = date.getDate(),
+          year.innerText = date.getFullYear(),
+          month.innerText = date.getMonth()) {
+          case 0:
+            month.innerHTML = "01";
+            break;
+          case 1:
+            month.innerHTML = "02";
+            break;
+          case 2:
+            month.innerHTML = "03";
+            break;
+          case 3:
+            month.innerHTML = "04";
+            break;
+          case 4:
+            month.innerHTML = "05";
+            break;
+          case 5:
+            month.innerHTML = "06";
+            break;
+          case 6:
+            month.innerHTML = "07";
+            break;
+          case 7:
+            month.innerHTML = "08";
+            break;
+          case 8:
+            month.innerHTML = "09";
+            break;
+          case 9:
+            month.innerHTML = "10";
+            break;
+          case 10:
+            month.innerHTML = "11";
+            break;
+          case 11:
+            month.innerHTML = "12"
+        }
+      
+        const hour = document.querySelector("#hour");
+        const minute = document.querySelector("#minute");
+        const second = document.querySelector("#second");
+      
+        hour.innerText = date.getHours();
+        minute.innerText = date.getMinutes();
+        second.innerText = date.getSeconds();
+      
+        if (second.innerText < 60) {
+          if (second.innerText < 10) {
+            second.innerText = "0" + second.innerText;
+          }
+          if (minute.innerText < 10) {
+            minute.innerText = "0" + minute.innerText;
+          }
+        }
+        setTimeout(go, 1000);
+      });
+      
 
     //mobile menu
     const menuBtn = document.querySelector(".burger-menu");
